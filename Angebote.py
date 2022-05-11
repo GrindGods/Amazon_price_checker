@@ -38,8 +38,8 @@ headers = {
     'cookie': 'session-id=260-4401342-6647323; i18n-prefs=EUR; ubid-acbde=262-4130625-6436332; lc-acbde=de_DE; session-token=hV+iHOCiilabIYLGCJR/wy+MrV74SN9hMuWyKIQswQjJxuXTzzUjlAZb56ymqjRNrVCUXaZbBZOLlzF0ENHq6z9O+deXyAxwmg8+j7+rIKv5MvAAfOcKYjToE/FcLv4dEOkZVoprSbx5eWemfk0UUIw04XxxlAYUu0MRHzP6LW5QHMbiR0EbXHRjRaAB8lZa; csm-hit=tb:s-3RR29G2CB5SX7K01A2H5|1650405851483&t:1650405874602&adb:adblk_no; session-id-time=2082754801l',
 }
 
-user = 'thomas-roedl@gmx.de'
-pwd = 'Laplace!'
+user = 'your_email_address' # address from which you send the mail (here I used gmx.net)
+pwd = 'your_login_password_on_gmx.net'
 
 
 class Angebote:
@@ -85,20 +85,16 @@ class Angebote:
 if __name__ == '__main__':
     print('Angebot-Script laeuft')
 
-    thomas = Angebote('https://www.amazon.de/gp/product/B0973HRKWG', "Elden Ring", 45, 'deskoidenou@googlemail.com',
-             'Thomas')
-    susi = Angebote('https://www.amazon.de/gp/product/B07KSCV37M', 'Tefal Buegeleisen', 60, 'susanne.roedl@yahoo.de',
-             'Susi')
+    test = Angebote('https://www.amazon.de/gp/product/B0973HRKWG', "Elden Ring", 45, 'receiving_email_address',
+             'receivers_name')
 
     # debug:
     """
-    thomas.req()
-    susi.req()
+    test.req()
     """
 
     def exec_six():
-        thomas.req()
-        susi.req()
+        test.req()
 
     schedule.every(4).hours.do(exec_six)
     while True:
